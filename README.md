@@ -66,6 +66,30 @@ Loyiha ishlashi uchun zarur bo'lgan barcha eng so'nggi va barqaror paketlar bog'
 ### 4. Dastlabki Sahifa va Modellar (Placeholders)
 Sahifalarning yo'llari xatolarsiz ishlashi uchun barcha features sahifalarining dastlabki minimal ko'rinishlari yozildi va `app_router.dart` ga ulandi. Shuningdek, asosiy modellarimiz bo'lgan `Course` va `Lesson` entity klasslari [entities/](file:///c:/Flutter%20projects/arch_academy/lib/features/courses/domain/entities) ichida yaratib qo'yildi.
 
+### 🎨 2-Faza: Asosiy UI va O'quv Kontenti (MVP Features)
+Ushbu bosqichda ilovamizning barcha asosiy va markaziy UI sahifalari hamda o'quv kontenti bo'limlari to'liq va premium tarzda ishlab chiqildi:
+*   **Onboarding Sahifasi (`lib/features/onboarding/`):**
+    *   3 slaydli chiroyli slaydlar (`PageView` orqali).
+    *   `flutter_animate` yordamida titellar va tasvirlar silliq, dynamic tarzda kirib kelishi.
+    *   Dynamic nuqtali indicatorlar va "Boshlash" navigatsiyasi.
+*   **Bosh Sahifa (`lib/features/home/`):**
+    *   Salomlashish qismi, foydalanuvchi profil rasmi va kunlik progress ko'rsatkichi.
+    *   `CircularPercentIndicator` bilan premium **34%** lik circular progress doirasi.
+    *   Tillar bo'yicha dinamik gorizontal filter chiplari (All, Dart, Flutter, Java, Kotlin) va ularni bosganda state avtomatik yangilanishi.
+*   **Kurslar Katalogi (`lib/features/courses/presentation/pages/courses_page.dart`):**
+    *   Qidiruv paneli (Search query) orqali kurslarni izlash.
+    *   Tillar va qiyinchilik darajalari (Boshlang'ich, O'rta, Yuqori) bo'yicha to'liq dropdown filtrlash tizimi.
+*   **Kurs Detallari (`lib/features/courses/presentation/pages/course_detail_page.dart`):**
+    *   SliverAppBar bilan dynamic premium header qismi.
+    *   Kurs haqida va Dasturi uchun Tab tizimi.
+    *   Checklist orqali nimalar o'rgatilishi haqida premium UI.
+    *   Darslar ro'yxatida **Darslarni Qulflash/Ochish** logikasi: `isPreview == true` bo'lgan bepul darslarni ko'rish mumkin, pullik darslarni bosganda foydalanuvchiga premium a'zolik kerakligi haqida tushunarli dialog chiqadi.
+*   **Kurs Kartochkasi (`lib/features/courses/presentation/widgets/course_card.dart`):**
+    *   Har bir til uchun alohida dynamic rangli badge (Dart = Ko'k, Flutter = Och ko'k, Java = To'q sariq, Kotlin = Binafsha).
+    *   Bosganda chiroyli scale bo'luvchi (tap scale) premium effekt, rating, darslar soni va umumiy davomiylik ko'rsatkichi.
+*   **Cubit & Dependency Injection:**
+    *   `CoursesCubit` va `LessonsCubit` yordamida state management boshqaruvi to'liq Clean arxitekturaga moslab integratsiya qilindi va `injection_container.dart` da ro'yxatdan o'tkazildi.
+
 ---
 
 ## 🏃‍♂️ Ishga Tushirish va Keyingi Qadamlar
