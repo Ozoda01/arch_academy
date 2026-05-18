@@ -90,6 +90,30 @@ Ushbu bosqichda ilovamizning barcha asosiy va markaziy UI sahifalari hamda o'quv
 *   **Cubit & Dependency Injection:**
     *   `CoursesCubit` va `LessonsCubit` yordamida state management boshqaruvi to'liq Clean arxitekturaga moslab integratsiya qilindi va `injection_container.dart` da ro'yxatdan o'tkazildi.
 
+### 🎬 3-Faza: O'quv jarayoni va Video Player (Core Learning)
+Ilovaning markaziy qismi bo'lgan video playerlar va o'quv progressini saqlash tizimi muvaffaqiyatli integratsiya qilindi:
+*   **In-App Video Player (`lib/features/player/`):**
+    *   `video_player` va `chewie` yordamida silliq fullscreen boshqaruvi va premium controls.
+    *   "Darsni yakunladim" tugmasi orqali dars holatini `Hive` lokal omboriga yozish.
+*   **YouTube Player (`lib/features/player/`):**
+    *   `youtube_player_flutter` paketi yordamida YouTube linklarini dynamic o'qib ko'rsatish.
+*   **Mening Progressim Sahifasi (`lib/features/progress/`):**
+    *   Katta `CircularPercentIndicator` bilan umumiy o'zlashtirish foizining visual gradient kartochkasi.
+    *   **fl_chart** orqali premium **BarChart (Ustunli Grafik)**: Dart, Flutter, Java, Kotlin tillaridagi o'zlashtirish foizlarini visual solishtirish 📊.
+*   **Profil Sahifasi (`lib/features/profile/`):**
+    *   Foydalanuvchi ma'lumotlari, Light/Dark reji switchlari hamda progressni noldan boshlash uchun xavfsiz **"Progressni tozalash"** dialog utilitasi.
+
+### 🏆 4-Faza: Test Tizimi (Quiz) va Yakuniy Polish
+Kurs oxirida bilimlarni tekshiruvchi premium test tizimi va vizual effektlar:
+*   **Quiz Sahifasi (`lib/features/quiz/presentation/pages/quiz_page.dart`):**
+    *   15 soniyalik visual circular orqaga hisoblagich (Timer).
+    *   To'g'ri javob tanlanganda yashil rangli dynamic **Pulse (Kattalashuv) animatsiyasi** 🟢.
+    *   Xato javob tanlanganda qizil rangli **Shake (Titrash) animatsiyasi** 🔴.
+    *   Savol javobdan so'ng, uning tushuntirishi (Explanation) yoritiluvchi premium visual informativ block.
+*   **Natijalar Sahifasi (`lib/features/quiz/presentation/pages/quiz_result_page.dart`):**
+    *   Agar foydalanuvchi testdan muvaffaqiyatli o'tsa (kamida 60%), butun ekranda dynamic **Lottie Confetti** bayramona animatsiyasi o'ynaydi! 🎉
+    *   Circular Score indicator hamda to'g'ri/xato javoblarning tahlili va tushuntirishlari yozilgan review paneli.
+
 ---
 
 ## 🏃‍♂️ Ishga Tushirish va Keyingi Qadamlar
