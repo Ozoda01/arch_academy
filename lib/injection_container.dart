@@ -12,6 +12,7 @@ import 'features/courses/domain/usecases/get_courses.dart';
 import 'features/courses/domain/usecases/get_lessons_by_course.dart';
 import 'features/courses/presentation/cubit/courses_cubit.dart';
 import 'features/courses/presentation/cubit/lessons_cubit.dart';
+import 'features/progress/presentation/cubit/progress_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -45,5 +46,8 @@ Future<void> init() async {
   );
   getIt.registerFactory<LessonsCubit>(
     () => LessonsCubit(getLessonsByCourse: getIt<GetLessonsByCourse>()),
+  );
+  getIt.registerFactory<ProgressCubit>(
+    () => ProgressCubit(),
   );
 }
